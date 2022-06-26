@@ -1,4 +1,5 @@
-﻿using Exiled.Events.EventArgs;
+﻿using Exiled.API.Features.Items;
+using Exiled.Events.EventArgs;
 
 namespace SCPArena
 {
@@ -13,6 +14,12 @@ namespace SCPArena
         {
             if (Plugin.AppliedScenario == null || ev.ItemsToDrop == null || ev.ItemsToDrop.IsEmpty() || Plugin.AppliedScenario.DropItems) return;
             ev.ItemsToDrop.Clear();
+        }
+
+        public void OnShooting(ShootingEventArgs ev)
+        {
+            if (Plugin.AppliedScenario == null || !Plugin.AppliedScenario.InfiniteAmmo) return;
+            (ev.Shooter.CurrentItem as Firearm).Ammo++;
         }
     }
 }

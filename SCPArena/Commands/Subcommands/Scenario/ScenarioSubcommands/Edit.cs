@@ -66,7 +66,7 @@ namespace SCPArena.Commands.Subcommands.Scenario.ScenarioSubcommands
                         return false;
                     }
 
-                    if (scenario.SpawnPositions.Count+1 >= posPlyResult)
+                    if (scenario.SpawnPositions.Count+1 <= posPlyResult)
                         scenario.SpawnPositions.Add(SerializableVector.FromVector(player.Position));
                     else
                         scenario.SpawnPositions[posPlyResult - 1] = SerializableVector.FromVector(player.Position);
@@ -79,7 +79,7 @@ namespace SCPArena.Commands.Subcommands.Scenario.ScenarioSubcommands
                         return false;
                     }
 
-                    if (scenario.RoomSpawnPositions.Count+1 >= roomPlyResult)
+                    if (scenario.RoomSpawnPositions.Count+1 <= roomPlyResult)
                         scenario.RoomSpawnPositions.Add(player.CurrentRoom.Type);
                     else
                         scenario.RoomSpawnPositions[roomPlyResult - 1] = player.CurrentRoom.Type;
@@ -115,7 +115,7 @@ namespace SCPArena.Commands.Subcommands.Scenario.ScenarioSubcommands
                         return false;
                     }
 
-                    if (scenario.Loadouts.Count+1 >= loadoutPlyResult)
+                    if (scenario.Loadouts.Count+1 <= loadoutPlyResult)
                         scenario.Loadouts.Add(loadout);
                     else
                         scenario.Loadouts[loadoutPlyResult - 1] = loadout;

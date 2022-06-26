@@ -2,7 +2,7 @@
 
 namespace SCPArena
 {
-    public sealed class Config : IConfig
+    public class Config : IConfig
     {
         public bool IsEnabled { get; set; } = true;
         public bool AutoCleanupBodies { get; set; } = true;

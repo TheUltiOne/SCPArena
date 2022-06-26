@@ -50,12 +50,14 @@ namespace SCPArena
 
             Server.RoundEnded += _eventHandlers.OnRoundEnded;
             Exiled.Events.Handlers.Player.Dying += _eventHandlers.OnDying;
+            Exiled.Events.Handlers.Player.Shooting += _eventHandlers.OnShooting;
         }
 
         public override void OnDisabled()
         {
             Server.RoundEnded -= _eventHandlers.OnRoundEnded;
             Exiled.Events.Handlers.Player.Dying -= _eventHandlers.OnDying;
+            Exiled.Events.Handlers.Player.Shooting -= _eventHandlers.OnShooting;
 
             _eventHandlers = null;
             AppliedScenario = null;
